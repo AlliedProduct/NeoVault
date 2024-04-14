@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeoVault Savings</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Nav bar using bootstrap -->
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block bg-dark sidebar">
+                <div class="sidebar-sticky">
+                    <div class="user-profile mb-3 text-center">
+                        <img src="images/pfp.png" alt="User Name" class="img-fluid rounded-circle">
+                        <h6 class="text-white mt-2" id="userProfileName"></h6>
+                    </div>
+                    <ul class="nav flex-column">
+                        <li class="nav-item"><a class="nav-link text-white" href="index.html">Dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="transactions.html">Transactions</a></li>
+                        <li class="nav-item"><a class="nav-link active text-white" href="savings.html">Savings</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="settings.html">Settings</a></li>
+                        <li class="nav-item"><a class="nav-link text-white"><button id="logoutButton">Logout</button></a></li>
+
+                    </ul>
+                </div>
+            </nav>
+
+
+            <!-- Main content that displays balance and allows users to set a savings goal -->
+            <main role="main" class="col-md-10 ml-sm-auto col-lg-10 px-4">
+                <h1 class="my-4">Savings</h1>
+                <div class="row">
+                    <div class="col-md-6">
+                      <h4>Current Balance: <span id="balance"></span></h4>
+                    </div>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="mb-3">Savings Goal Tracker</h2>
+                <div class="card">
+                    <div class="card-body">
+                        <form id="goalForm" class="mb-3">
+                            <div class="form-group">
+                                <label for="goalAmount">Set Savings Goal:</label>
+                                <input type="number" class="form-control" id="goalAmount" placeholder="Enter goal amount" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Set Goal</button>
+                        </form>
+                        <form id="savingsForm" class="mb-3">
+                            <div class="form-group">
+                                <label for="savingsAmount">Add to Savings:</label>
+                                <input type="number" class="form-control" id="savingsAmount" placeholder="Enter amount to save" required>
+                            </div>
+                            <div id="messageBox"></div>
+                            <button type="submit" class="btn btn-success">Add Savings</button>
+                        </form>
+                        <div>
+                            <h4>Current Savings: <span id="currentSavings">$0.00</span></h4>
+                            <h4>Savings Goal: <span id="savingsGoal">$0.00</span></h4>
+                            <div class="progress">
+                                <div id="savingsProgress" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">0%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

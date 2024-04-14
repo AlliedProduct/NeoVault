@@ -1,0 +1,109 @@
+body {
+  font-family: 'Arial', sans-serif;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  padding: 48px 0 0;
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+}
+
+.sidebar-sticky {
+  position: relative;
+  top: 0;
+  height: calc(100vh - 48px);
+  padding-top: .5rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+h1, h2 {
+  color: #333;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0,0,0,.05);
+}
+#topUpForm {
+  margin-top: 20px;
+}
+
+.sidebar {
+  color: #fff;
+}
+
+.user-profile img {
+  width: 80px;
+  height: 80px;
+}
+
+.nav-link {
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: #505050;
+}
+
+.nav-link.active {
+  background-color: #686868;
+  border-radius: 5px;
+}
+
+.success {
+  color: green;
+  background-color: #ccffcc;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.error {
+  color: red;
+  background-color: #ffcccc;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+#chartContainer {
+  display: none;
+}
+
+.centered-form {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.form-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.loginpage{
+  background-image: url("../images/background1.jpg");
+}
+
+#title{
+  color: white;
+  margin-left: -100px;
+  padding-right: 50px;
+  text-shadow: 1px 1px 2px black;
+}
+
+#loginHeading{
+  color: white;
+}
+
+#registerHeading{
+  color: white
+}

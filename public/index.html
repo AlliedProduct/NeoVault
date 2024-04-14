@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeoVault Dashboard</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Nav bar using bootstrap -->
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block bg-dark sidebar">
+                <div class="sidebar-sticky">
+                    <div class="user-profile mb-3 text-center">
+                        <img src="images/pfp.png" alt="User Name" class="img-fluid rounded-circle">
+                        <h6 class="text-white mt-2" id="userProfileName"></h6>
+                    </div>
+                    <ul class="nav flex-column">
+                        <li class="nav-item"><a class="nav-link active text-white" href="index.html">Dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="transactions.html">Transactions</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="savings.html">Savings</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="settings.html">Settings</a></li>
+                        <li class="nav-item"><a class="nav-link text-white"><button id="logoutButton">Logout</button></a></li>
+                    </ul>
+                </div>
+            </nav>
+            <!-- Main content that displays balance and allows users to top up their balance using bootstrap aswell -->
+            <main role="main" class="col-md-10 ml-sm-auto col-lg-10 px-4">
+                <h1 class="my-4">Dashboard</h1>
+                <div class="row">
+                    <div class="col-md-6">
+                      <h4>Current Balance: <span id="balance"></span></h4>
+                      <form id="topUpForm"">
+                          <div class="form-group">
+                              <label for="topUpAmount">Top Up Amount:</label>
+                              <input type="number" class="form-control" id="topUpAmount" required>
+                          </div>
+                          <button type="submit" class="btn btn-primary">Top Up</button>
+                      </form>
+                      <div id="messageBox"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <h2>Balance Overview</h2>
+                        <!-- //chart that displays recent activites -->
+                        <canvas id="myChart"></canvas>
+                    </div>
+                </div>
+                <!-- table that displays recent transactions -->
+                <div class="row mt-4">
+                    <div class="col-md-12">
+                        <h2>Recent Transactions</h2>
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="transactionsTableBody">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
