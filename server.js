@@ -40,7 +40,8 @@ const db = mysql.createConnection({
     host: '52.208.154.224',
     user: 'root',          
     password: 'Password123', 
-    database: 'banking'     
+    database: 'banking',
+    charset: 'utf8mb4' // Ensuring we use a widely supported charset
 });
 
 db.connect((err) => {
@@ -115,23 +116,6 @@ app.get('/balance', (req, res) => {
     db.query(query, [userId], (err, results) => {
         if (err) res.status(500).send({ error: 'Database query failed' });
         else res.send({ balance: results[0].balance });
-    });
-});
-
-//
-app.get('/transactions', (req, res) => {
-    const userId = req.session.userId;
-    if (!userId) {
-        return res.status(401).json({ error: 'User not authenticated' });
-    }
-    const query = 'SELECT transaction_date, description, amount FROM transactions WHERE user_id = ? ORDER BY transaction_date DESC';
-    db.query(query, [userId], (err, results) => { // Replace 'userId' with the actual user's ID
-        if (err) {
-            console.error("Database error:", err);
-            res.status(500).send({ error: 'Failed to fetch transactions' });
-            return;
-        }
-        res.json(results);
     });
 });
 
@@ -544,7 +528,10 @@ app.get('/test-database', (req, res) => {
     });
 });
 
+if (require.main === module) {
+    app.listen(port, () => {
+        console.log(`Server running on port ${port}`);
+    });
+}
 
-app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
-});
+module.exports = { app, db }; // Export both the app and db connection
